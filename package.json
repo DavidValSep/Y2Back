@@ -1,0 +1,37 @@
+{
+  "name": "yoo2back",
+  "version": "1.0.0",
+  "description": "Potente sistema de descarga y respaldo de contenido de YouTube con CLI y GUI funcionales",
+  "main": "src/index.js",
+  "bin": {
+    "yoo2back": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "electron .",
+    "cli": "node src/cli.js",
+    "test": "echo \"No tests specified yet\" && exit 0"
+  },
+  "keywords": [
+    "youtube",
+    "downloader",
+    "backup",
+    "cli",
+    "gui",
+    "electron",
+    "video",
+    "audio",
+    "subtitles"
+  ],
+  "author": "DavidValSep",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "electron": "^39.0.0",
+    "ora": "^5.4.1",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
