@@ -6,16 +6,24 @@ let mainWindow;
 let downloader;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({
+  const windowConfig = {
     width: 1200,
     height: 800,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
-    },
-    icon: path.join(__dirname, '../assets/icon.png')
-  });
+    }
+  };
+  
+  // Add icon if it exists
+  const iconPath = path.join(__dirname, '../assets/icon.png');
+  const fs = require('fs');
+  if (fs.existsSync(iconPath)) {
+    windowConfig.icon = iconPath;
+  }
+  
+  mainWindow = new BrowserWindow(windowConfig);
 
   mainWindow.loadFile(path.join(__dirname, '../gui/index.html'));
 
